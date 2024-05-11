@@ -24,7 +24,7 @@ class Careox_About_Us extends \Elementor\Widget_Base {
 	protected function register_controls() {
 
 		$this->start_controls_section(
-			'careox_about_us_section_heading',
+			'cx_about_us_section_heading',
 			[
 				'label' => esc_html__( 'About Heading', 'careox-core' ),
 				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
@@ -238,7 +238,7 @@ class Careox_About_Us extends \Elementor\Widget_Base {
         $this->add_control(
 			'cx_about_us_btn_url',
 			[
-				'label' => esc_html__( 'Link', 'careox-core' ),
+				'label' => esc_html__( 'Button Link', 'careox-core' ),
 				'type' => \Elementor\Controls_Manager::URL,
 				'options' => [ 'url', 'is_external', 'nofollow' ],
 				'default' => [
@@ -251,6 +251,202 @@ class Careox_About_Us extends \Elementor\Widget_Base {
                 'condition' => [
                     'cx_about_us_show_btn' => 'yes',
                 ],
+			]
+		);
+
+		$this->end_controls_section();
+
+
+        $this->start_controls_section(
+			'cx_about_us_section_image',
+			[
+				'label' => esc_html__( 'About Images', 'careox-core' ),
+				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
+			]
+		);
+
+        $this->add_control(
+			'cx_about_us_section_image_one',
+			[
+				'label' => esc_html__( 'Choose Image One', 'careox-core' ),
+				'type' => \Elementor\Controls_Manager::MEDIA,
+				'default' => [
+					'url' => \Elementor\Utils::get_placeholder_image_src(),
+				],
+			]
+		);
+
+        $this->add_control(
+			'cx_about_us_section_image_two',
+			[
+				'label' => esc_html__( 'Choose Image Two', 'careox-core' ),
+				'type' => \Elementor\Controls_Manager::MEDIA,
+				'default' => [
+					'url' => \Elementor\Utils::get_placeholder_image_src(),
+				],
+                'separator' => 'before'
+			]
+		);
+
+		$this->end_controls_section();
+
+
+
+        $this->start_controls_section(
+			'cx_about_us_section_media',
+			[
+				'label' => esc_html__( 'Media', 'careox-core' ),
+				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
+			]
+		);
+
+        $this->add_control(
+			'cx_about_us_media_video_icon',
+			[
+				'label' => esc_html__( 'Video Icon', 'careox-core' ),
+				'type' => \Elementor\Controls_Manager::ICONS,
+				'default' => [
+					'value' => 'fas fa-circle',
+					'library' => 'fa-solid',
+				],
+			]
+		);
+
+        $this->add_control(
+			'cx_about_us_media_video_link',
+			[
+				'label' => esc_html__( 'Video Link', 'careox-core' ),
+				'type' => \Elementor\Controls_Manager::URL,
+				'options' => [ 'url', 'is_external', 'nofollow' ],
+				'default' => [
+					'url' => '#',
+					'is_external' => true,
+					'nofollow' => true,
+					// 'custom_attributes' => '',
+				],
+				'label_block' => true,
+			]
+		);
+
+        $this->add_control(
+			'cx_about_us_media_text',
+			[
+				'label' => esc_html__( 'Media Text', 'careox-core' ),
+				'type' => \Elementor\Controls_Manager::TEXT,
+				'default' => esc_html__( 'Always Support Us! ' , 'careox-core' ),
+				'label_block' => true,
+			]
+		);
+
+
+		$this->end_controls_section();
+
+
+
+        $this->start_controls_section(
+			'cx_about_us_section_shape_image',
+			[
+				'label' => esc_html__( 'Shape Images', 'careox-core' ),
+				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
+			]
+		);
+
+        $this->add_control(
+			'cx_about_us_show_shape_one',
+			[
+				'label' => esc_html__( 'Show Shape', 'careox-core' ),
+				'type' => \Elementor\Controls_Manager::SWITCHER,
+                'description' => 'Show or Hide Shape Image. Default: Show',
+				'label_on' => esc_html__( 'Show', 'careox-core' ),
+				'label_off' => esc_html__( 'Hide', 'careox-core' ),
+				'return_value' => 'yes',
+				'default' => 'yes',
+			]
+		);
+
+        $this->add_control(
+			'cx_about_us_section_shape_image_one',
+			[
+				'label' => esc_html__( 'Choose Image One', 'careox-core' ),
+				'type' => \Elementor\Controls_Manager::MEDIA,
+				'default' => [
+					'url' => XPOVIO_CORE_BASE_URL . "assets/images/shapes/about-1-shape-1.png",
+				],
+			]
+		);
+
+        $this->add_control(
+			'cx_about_us_show_shape_two',
+			[
+				'label' => esc_html__( 'Show Button', 'careox-core' ),
+				'type' => \Elementor\Controls_Manager::SWITCHER,
+                'description' => 'Show or Hide Button. Default: Show',
+				'label_on' => esc_html__( 'Show', 'careox-core' ),
+				'label_off' => esc_html__( 'Hide', 'careox-core' ),
+				'return_value' => 'yes',
+				'default' => 'yes',
+                'separator' => 'before'
+			]
+		);
+
+        $this->add_control(
+			'cx_about_us_section_shape_image_two',
+			[
+				'label' => esc_html__( 'Choose Image Two', 'careox-core' ),
+				'type' => \Elementor\Controls_Manager::MEDIA,
+				'default' => [
+					'url' => XPOVIO_CORE_BASE_URL . "assets/images/shapes/about-1-shape-2.png",
+				],
+			]
+		);
+
+        $this->add_control(
+			'cx_about_us_show_shape_three',
+			[
+				'label' => esc_html__( 'Show Button', 'careox-core' ),
+				'type' => \Elementor\Controls_Manager::SWITCHER,
+                'description' => 'Show or Hide Button. Default: Show',
+				'label_on' => esc_html__( 'Show', 'careox-core' ),
+				'label_off' => esc_html__( 'Hide', 'careox-core' ),
+				'return_value' => 'yes',
+				'default' => 'yes',
+                'separator' => 'before'
+			]
+		);
+
+        $this->add_control(
+			'cx_about_us_section_shape_image_three',
+			[
+				'label' => esc_html__( 'Choose Image Three', 'careox-core' ),
+				'type' => \Elementor\Controls_Manager::MEDIA,
+				'default' => [
+					'url' => XPOVIO_CORE_BASE_URL . "assets/images/shapes/about-1-shape-3.png",
+				],
+			]
+		);
+
+        $this->add_control(
+			'cx_about_us_show_shape_four',
+			[
+				'label' => esc_html__( 'Show Button', 'careox-core' ),
+				'type' => \Elementor\Controls_Manager::SWITCHER,
+                'description' => 'Show or Hide Button. Default: Show',
+				'label_on' => esc_html__( 'Show', 'careox-core' ),
+				'label_off' => esc_html__( 'Hide', 'careox-core' ),
+				'return_value' => 'yes',
+				'default' => 'yes',
+                'separator' => 'before'
+			]
+		);
+
+        $this->add_control(
+			'cx_about_us_section_shape_image_four',
+			[
+				'label' => esc_html__( 'Choose Image Four', 'careox-core' ),
+				'type' => \Elementor\Controls_Manager::MEDIA,
+				'default' => [
+					'url' => XPOVIO_CORE_BASE_URL . "assets/images/shapes/about-1-shape-4.png",
+				],
 			]
 		);
 

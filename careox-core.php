@@ -27,7 +27,7 @@ class Careox_Core {
 	public function __construct(){
 		add_action( 'plugins_loaded', [$this, 'load_textdomain']);
 		add_action( 'after_setup_theme', array( $this, 'careox_core_widgets' ) );
-		add_action( 'wp_enqueue_scripts', array( $this, 'careox_core_enqueue_files' ));
+		add_action( 'wp_enqueue_scripts', array( $this, 'careox_core_enqueue_files' ), 19 );
 	}
 
 	public function careox_core_widgets(){
