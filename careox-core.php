@@ -27,7 +27,7 @@ class Careox_Core {
 	public function __construct(){
 		add_action( 'plugins_loaded', [$this, 'load_textdomain']);
 		add_action( 'after_setup_theme', array( $this, 'careox_core_widgets' ) );
-		add_action( 'wp_enqueue_scripts', array( $this, 'careox_core_enqueue_files' ), 19 );
+		add_action( 'wp_enqueue_scripts', array( $this, 'careox_core_enqueue_files' ));
 	}
 
 	public function careox_core_widgets(){
@@ -44,11 +44,13 @@ class Careox_Core {
 	public function careox_core_enqueue_files(){
 	
 		wp_enqueue_style("google-fonts", "//fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+		wp_enqueue_style("font-awesome-css", XPOVIO_CORE_BASE_URL . "assets/vendors/fontawesome/css/all.min.css");
 		wp_enqueue_style("bootstrap-css", XPOVIO_CORE_BASE_URL . "assets/vendors/bootstrap/css/bootstrap.min.css");
 		wp_enqueue_style("coreox-icon", XPOVIO_CORE_BASE_URL . "assets/vendors/careox-icons/style.css");
 		wp_enqueue_style("coreox-icofont", XPOVIO_CORE_BASE_URL . "assets/vendors/icofont/icofont.min.css");
 		wp_enqueue_style("coreox-main-css", XPOVIO_CORE_BASE_URL . "assets/css/careox.css");
 
+		wp_enqueue_script("bootstrap-js", XPOVIO_CORE_BASE_URL . "assets/vendors/bootstrap/js/bootstrap.bundle.min.js", array('jquery'), '1.0.0', true);
 		wp_enqueue_script("bootstrap-js", XPOVIO_CORE_BASE_URL . "assets/vendors/bootstrap/js/bootstrap.bundle.min.js", array('jquery'), '1.0.0', true);
 		wp_enqueue_script("bootstrap-popup-js", XPOVIO_CORE_BASE_URL . "assets/vendors/jquery-magnific-popup/jquery.magnific-popup.min.js", array('jquery'), '1.0.0', true);
 		wp_enqueue_script("wow-js", XPOVIO_CORE_BASE_URL . "assets/vendors/wow/wow.js", array('jquery'), '1.0.0', true);

@@ -61,7 +61,203 @@ class Careox_About_Us extends \Elementor\Widget_Base {
 			]
 		);
 
+
+
+        $this->add_control(
+			'cx_about_us_show_content_box',
+			[
+				'label' => esc_html__( 'Show Content Box', 'careox-core' ),
+				'type' => \Elementor\Controls_Manager::SWITCHER,
+                'description' => 'Show or Hide Content. Default: Show',
+				'label_on' => esc_html__( 'Show', 'careox-core' ),
+				'label_off' => esc_html__( 'Hide', 'careox-core' ),
+				'return_value' => 'yes',
+				'default' => 'yes',
+                'separator' => 'before'
+			]
+		);
+
+        $content_box = new \Elementor\Repeater();
+
+        $content_box->add_control(
+			'cx_about_us_content_box_title_icon',
+			[
+				'label' => esc_html__( 'Title Icon', 'careox-core' ),
+				'type' => \Elementor\Controls_Manager::ICONS,
+				'default' => [
+					'value' => 'fas fa-circle',
+					'library' => 'fa-solid',
+				],
+			]
+		);
+
+		$content_box->add_control(
+			'cx_about_us_content_box_title',
+			[
+				'label' => esc_html__( 'Title', 'careox-core' ),
+				'type' => \Elementor\Controls_Manager::TEXT,
+				'default' => esc_html__( 'add new title' , 'careox-core' ),
+				'label_block' => true,
+			]
+		);
+
+        $content_box->add_control(
+			'cx_about_us_content_box_desc_icon',
+			[
+				'label' => esc_html__( 'Description Icon', 'careox-core' ),
+				'type' => \Elementor\Controls_Manager::ICONS,
+				'default' => [
+					'value' => 'fas fa-circle',
+					'library' => 'fa-solid',
+				],
+			]
+		);
+        
+		$content_box->add_control(
+			'cx_about_us_content_box_desc',
+			[
+				'label' => esc_html__( 'Description', 'careox-core' ),
+				'type' => \Elementor\Controls_Manager::TEXTAREA,
+				'default' => esc_html__( 'add new description' , 'careox-core' ),
+				'label_block' => true,
+			]
+		);
+
+		$this->add_control(
+			'cx_about_us_content_box_list',
+			[
+				'label' => esc_html__( 'Content Box List', 'careox-core' ),
+				'type' => \Elementor\Controls_Manager::REPEATER,
+				'fields' => $content_box->get_controls(),
+				'default' => [
+					[
+						'cx_about_us_content_box_title' => esc_html__( 'Treatment Help', 'careox-core' ),
+						'cx_about_us_content_box_desc' => esc_html__( 'No matter what you you have.', 'careox-core' ),
+                    ],
+					[
+						'cx_about_us_content_box_title' => esc_html__( 'Help Raising', 'careox-core' ),
+						'cx_about_us_content_box_desc' => esc_html__( 'No matter what you you have.', 'careox-core' ),
+                    ]
+				],
+				'title_field' => '{{{ cx_about_us_content_box_title }}}',
+                'condition' => [
+                    'cx_about_us_show_content_box' => 'yes',
+                ],
+			]
+		);
+
+        $this->add_control(
+			'cx_about_us_show_content_list',
+			[
+				'label' => esc_html__( 'Show Content List', 'careox-core' ),
+				'type' => \Elementor\Controls_Manager::SWITCHER,
+                'description' => 'Show or Hide Content. Default: Show',
+				'label_on' => esc_html__( 'Show', 'careox-core' ),
+				'label_off' => esc_html__( 'Hide', 'careox-core' ),
+				'return_value' => 'yes',
+				'default' => 'yes',
+                'separator' => 'before'
+			]
+		);
+
+
+
+        $content_list = new \Elementor\Repeater();
+
+        $content_list->add_control(
+			'cx_about_us_content_list_icon',
+			[
+				'label' => esc_html__( 'Icon', 'careox-core' ),
+				'type' => \Elementor\Controls_Manager::ICONS,
+				'default' => [
+					'value' => 'fas fa-circle',
+					'library' => 'fa-solid',
+				],
+			]
+		);
+        
+		$content_list->add_control(
+			'cx_about_us_content_list_title',
+			[
+				'label' => esc_html__( 'Title', 'careox-core' ),
+				'type' => \Elementor\Controls_Manager::TEXTAREA,
+				'default' => esc_html__( 'add new description' , 'careox-core' ),
+				'label_block' => true,
+			]
+		);
+
+		$this->add_control(
+			'cx_about_us_content_list',
+			[
+				'label' => esc_html__( 'Content List', 'careox-core' ),
+				'type' => \Elementor\Controls_Manager::REPEATER,
+				'fields' => $content_list->get_controls(),
+				'default' => [
+					[
+						'cx_about_us_content_list_title' => __( 'We help companies develop powerful corporate social <a href="about.html">Responsibility,</a>', 'careox-core' ),
+                    ],
+					[
+						'cx_about_us_content_list_title' => esc_html__( 'Helped fund 3,265 Project powerful corporate poor. ', 'careox-core' ),
+					]
+				],
+				'title_field' => '{{{ cx_about_us_content_list_title }}}',
+                'condition' => [
+                    'cx_about_us_show_content_list' => 'yes',
+                ],
+			]
+		);
+
+
+        $this->add_control(
+			'cx_about_us_show_btn',
+			[
+				'label' => esc_html__( 'Show Button', 'careox-core' ),
+				'type' => \Elementor\Controls_Manager::SWITCHER,
+                'description' => 'Show or Hide Button. Default: Show',
+				'label_on' => esc_html__( 'Show', 'careox-core' ),
+				'label_off' => esc_html__( 'Hide', 'careox-core' ),
+				'return_value' => 'yes',
+				'default' => 'yes',
+                'separator' => 'before'
+			]
+		);
+
+        $this->add_control(
+			'cx_about_us_btn_text',
+			[
+				'label' => esc_html__( 'Button Text', 'careox-core' ),
+				'type' => \Elementor\Controls_Manager::TEXT,
+				'default' => esc_html__( 'About More' , 'careox-core' ),
+				'label_block' => true,
+                'condition' => [
+                    'cx_about_us_show_btn' => 'yes',
+                ],
+			]
+		);
+
+        $this->add_control(
+			'cx_about_us_btn_url',
+			[
+				'label' => esc_html__( 'Link', 'careox-core' ),
+				'type' => \Elementor\Controls_Manager::URL,
+				'options' => [ 'url', 'is_external', 'nofollow' ],
+				'default' => [
+					'url' => '#',
+					'is_external' => true,
+					'nofollow' => true,
+					// 'custom_attributes' => '',
+				],
+				'label_block' => true,
+                'condition' => [
+                    'cx_about_us_show_btn' => 'yes',
+                ],
+			]
+		);
+
 		$this->end_controls_section();
+
+
+
 
 
 		$this->start_controls_section(
