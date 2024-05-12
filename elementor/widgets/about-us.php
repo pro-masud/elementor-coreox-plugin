@@ -548,7 +548,7 @@ class Careox_About_Us extends \Elementor\Widget_Base {
 			'careox_about_us_section_title_color',
 			[
 				'type' => \Elementor\Controls_Manager::COLOR,
-				'label' => esc_html__('Title Color', 'xpovio-core'),
+				'label' => esc_html__('Title Color', 'careox-core'),
 				'selectors' => [
 					'{{WRAPPER}} .sec-title__title' => 'color: {{VALUE}}',
 				],
@@ -559,7 +559,7 @@ class Careox_About_Us extends \Elementor\Widget_Base {
 			\Elementor\Group_Control_Typography::get_type(),
 			[
 				'name' => 'careox_about_us_section_title_typo',
-				'label' => esc_html__('Typography', 'xpovio-core'),
+				'label' => esc_html__('Typography', 'careox-core'),
 				'selector' => '{{WRAPPER}} .sec-title__title',
 			]
 		);
@@ -568,7 +568,7 @@ class Careox_About_Us extends \Elementor\Widget_Base {
 			\Elementor\Group_Control_Text_Stroke::get_type(),
 			[
 				'name' => 'careox_about_us_section_title_stroke',
-				'label' => esc_html__('Title Stroke', 'xpovio-core'),
+				'label' => esc_html__('Title Stroke', 'careox-core'),
 				'selector' => '{{WRAPPER}} .sec-title__title',
 			]
 		);
@@ -576,7 +576,7 @@ class Careox_About_Us extends \Elementor\Widget_Base {
 			\Elementor\Group_Control_Text_Shadow::get_type(),
 			[
 				'name' => 'careox_about_us_section_title_shadow',
-				'label' => esc_html__('Title Shadow', 'xpovio-core'),
+				'label' => esc_html__('Title Shadow', 'careox-core'),
 				'selector' => '{{WRAPPER}} .sec-title__title',
 			]
 		);
@@ -584,7 +584,7 @@ class Careox_About_Us extends \Elementor\Widget_Base {
 		$this->add_responsive_control(
 			'careox_about_us_section_title_margin',
 			[
-				'label' => __('Margin', 'xpovio-core'),
+				'label' => __('Margin', 'careox-core'),
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units' => ['px'],
 				'selectors' => [
@@ -607,7 +607,7 @@ class Careox_About_Us extends \Elementor\Widget_Base {
 		$this->add_control(
 			'careox_about_us_section_sub_title_color',
 			[
-				'label' => esc_html__('Sub Title Color', 'xpovio-core'),
+				'label' => esc_html__('Sub Title Color', 'careox-core'),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .sec-title__tagline' => 'color: {{VALUE}}',
@@ -620,7 +620,7 @@ class Careox_About_Us extends \Elementor\Widget_Base {
 			\Elementor\Group_Control_Typography::get_type(),
 			[
 				'name' => 'careox_about_us_section_sub_title_typo',
-				'label' => esc_html__('Typography', 'xpovio-core'),
+				'label' => esc_html__('Typography', 'careox-core'),
 				'selector' => '{{WRAPPER}} .sec-title__tagline',
 			]
 		);
@@ -629,7 +629,7 @@ class Careox_About_Us extends \Elementor\Widget_Base {
 			\Elementor\Group_Control_Text_Shadow::get_type(),
 			[
 				'name' => 'careox_about_us_section_sub_title_shadow',
-				'label' => esc_html__('Title Shadow', 'xpovio-core'),
+				'label' => esc_html__('Title Shadow', 'careox-core'),
 				'selector' => '{{WRAPPER}} .sec-title__tagline',
 			]
 		);
@@ -637,7 +637,7 @@ class Careox_About_Us extends \Elementor\Widget_Base {
 		$this->add_responsive_control(
 			'careox_about_us_section_sub_title_margin',
 			[
-				'label' => __('Margin', 'xpovio-core'),
+				'label' => __('Margin', 'careox-core'),
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units' => ['px'],
 				'selectors' => [
@@ -649,6 +649,7 @@ class Careox_About_Us extends \Elementor\Widget_Base {
 		$this->end_controls_section();
 
 
+		
 		$this->start_controls_section(
 			'careox_about_us_section_desc_heading',
 			[
@@ -660,11 +661,10 @@ class Careox_About_Us extends \Elementor\Widget_Base {
 		$this->add_control(
 			'careox_about_us_section_desc_color',
 			[
-				'label' => esc_html__('Description Color', 'xpovio-core'),
+				'label' => esc_html__('Description Color', 'careox-core'),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .sec-title__tagline' => 'color: {{VALUE}}',
-					'{{WRAPPER}} .sec-title__tagline__border' => 'background-color: {{VALUE}}',
+					'{{WRAPPER}} .about-one__content__text' => 'color: {{VALUE}}',
 				],
 			]
 		);
@@ -673,8 +673,8 @@ class Careox_About_Us extends \Elementor\Widget_Base {
 			\Elementor\Group_Control_Typography::get_type(),
 			[
 				'name' => 'careox_about_us_section_desc_typo',
-				'label' => esc_html__('Typography', 'xpovio-core'),
-				'selector' => '{{WRAPPER}} .sec-title__tagline',
+				'label' => esc_html__('Typography', 'careox-core'),
+				'selector' => '{{WRAPPER}} .about-one__content__text',
 			]
 		);
 
@@ -682,24 +682,299 @@ class Careox_About_Us extends \Elementor\Widget_Base {
 			\Elementor\Group_Control_Text_Shadow::get_type(),
 			[
 				'name' => 'careox_about_us_section_desc_shadow',
-				'label' => esc_html__('Title Shadow', 'xpovio-core'),
-				'selector' => '{{WRAPPER}} .sec-title__tagline',
+				'label' => esc_html__('Title Shadow', 'careox-core'),
+				'selector' => '{{WRAPPER}} .about-one__content__text',
 			]
 		);
 
 		$this->add_responsive_control(
 			'careox_about_us_section_desc_margin',
 			[
-				'label' => __('Margin', 'xpovio-core'),
+				'label' => __('Margin', 'careox-core'),
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units' => ['px'],
 				'selectors' => [
-					'{{WRAPPER}} .sec-title__tagline' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}}',
+					'{{WRAPPER}} .about-one__content__text' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}}',
 				],
 			]
 		);
 
 		$this->end_controls_section();
+		
+
+
+		$this->start_controls_section(
+			'careox_about_us_section_content_box_heading',
+			[
+				'label' => esc_html__( 'Content Box', 'careox-core' ),
+				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+			]
+		);
+
+
+		$this->start_controls_tabs(
+			'careox_about_us_section_content_box_tabs'
+		);
+
+		$this->start_controls_tab(
+			'careox_about_us_section_content_box_tab',
+			[
+				'label' => __( 'Normal', 'careox-core' ),
+			]
+		);
+
+		$this->add_control(
+			'careox_about_us_section_content_box_icon_head',
+			[
+				'label' => esc_html__( 'Icon', 'careox-core' ),
+				'type' => \Elementor\Controls_Manager::HEADING,
+			]
+		);
+		
+		$this->add_control(
+			'careox_about_us_section_content_box_icon_normal_color',
+			[
+				'type'      => \Elementor\Controls_Manager::COLOR,
+				'label'     => esc_html__( 'Icon Color', 'careox-core' ),
+				'selectors' => [
+					'{{WRAPPER}} .xpovio-button .btn'=> 'color: {{VALUE}}',
+					'{{WRAPPER}} .about-one__content__box__icon span'=> 'color: {{VALUE}}',
+				],
+			]
+		);
+
+		$this->add_control(
+			'careox_about_us_section_content_box_icon_normal_bg_color',
+			[
+				'type'      => \Elementor\Controls_Manager::COLOR,
+				'label'     => esc_html__( 'Icon Background', 'careox-core' ),
+				'types'    => [ 'classic', 'gradient' ],
+				'selectors' => [
+					'{{WRAPPER}} .about-one__content__box__icon'=> 'background-color: {{VALUE}}',
+				],
+			]
+		);
+
+		$this->add_control(
+			'careox_about_us_section_content_box_hover_title_head',
+			[
+				'label' => esc_html__( 'Title', 'careox-core' ),
+				'type' => \Elementor\Controls_Manager::HEADING,
+				'separator'	=> 'before'
+			]
+		);
+
+		$this->add_control(
+			'careox_about_us_section_content_box_title_normal_color',
+			[
+				'type'      => \Elementor\Controls_Manager::COLOR,
+				'label'     => esc_html__( 'Title Color', 'careox-core' ),
+				'selectors' => [
+					'{{WRAPPER}} .about-one__content__box__title'=> 'color: {{VALUE}}',
+				],
+			]
+		);
+
+		$this->add_group_control(
+			\Elementor\Group_Control_Typography::get_type(),
+			[
+				'name' => 'careox_about_us_section_content_box_title_normal_typo',
+				'label' => esc_html__('Typography', 'careox-core'),
+				'selector' => '{{WRAPPER}}  .about-one__content__box__title',
+			]
+		);
+
+		$this->add_group_control(
+			\Elementor\Group_Control_Text_Shadow::get_type(),
+			[
+				'name' => 'careox_about_us_section_content_box_title_normal_shadow',
+				'label' => esc_html__('Title Shadow', 'careox-core'),
+				'selector' => '{{WRAPPER}} .about-one__content__box__title',
+			]
+		);
+
+		$this->add_control(
+			'careox_about_us_section_content_box_desc_head',
+			[
+				'label' => esc_html__( 'Description', 'careox-core' ),
+				'type' => \Elementor\Controls_Manager::HEADING,
+			]
+		);
+
+		$this->add_control(
+			'careox_about_us_section_content_box_desc_icon_normal_color',
+			[
+				'type'      => \Elementor\Controls_Manager::COLOR,
+				'label'     => esc_html__( 'Icon Color', 'careox-core' ),
+				'selectors' => [
+					'{{WRAPPER}} .about-one__content__box__text .about-one__content__box__text__icon'=> 'color: {{VALUE}}',
+				],
+			]
+		);
+
+		$this->add_control(
+			'careox_about_us_section_content_box_desc_normal_color',
+			[
+				'type'      => \Elementor\Controls_Manager::COLOR,
+				'label'     => esc_html__( 'Descrition Color', 'careox-core' ),
+				'selectors' => [
+					'{{WRAPPER}} .about-one__content__box__text'=> 'color: {{VALUE}}',
+				],
+			]
+		);
+
+		$this->add_group_control(
+			\Elementor\Group_Control_Typography::get_type(),
+			[
+				'name' => 'careox_about_us_section_content_box_desc_normal_typo',
+				'label' => esc_html__('Typography', 'careox-core'),
+				'selector' => '{{WRAPPER}} .about-one__content__box__text',
+			]
+		);
+
+		$this->add_group_control(
+			\Elementor\Group_Control_Text_Shadow::get_type(),
+			[
+				'name' => 'careox_about_us_section_content_box_desc_normal_shadow',
+				'label' => esc_html__('Title Shadow', 'careox-core'),
+				'selector' => '{{WRAPPER}} .about-one__content__box__text',
+			]
+		);
+
+		
+		$this->end_controls_tab();
+
+		$this->start_controls_tab(
+			'xpovio_button_hover_tab',
+			[
+				'label' => __( 'Hover', 'careox-core' ),
+			]
+		);
+
+		$this->add_control(
+			'careox_about_us_section_content_box_hover_icon_head',
+			[
+				'label' => esc_html__( 'Icon', 'careox-core' ),
+				'type' => \Elementor\Controls_Manager::HEADING,
+			]
+		);
+		
+		$this->add_control(
+			'careox_about_us_section_content_box_icon_hover_color',
+			[
+				'type'      => \Elementor\Controls_Manager::COLOR,
+				'label'     => esc_html__( 'Icon Color', 'careox-core' ),
+				'selectors' => [
+					'{{WRAPPER}} .xpovio-button .btn'=> 'color: {{VALUE}}',
+					'{{WRAPPER}} .about-one__content__box:hover .about-one__content__box__icon span'=> 'color: {{VALUE}}',
+				],
+			]
+		);
+
+		$this->add_control(
+			'careox_about_us_section_content_box_icon_hover_bg_color',
+			[
+				'type'      => \Elementor\Controls_Manager::COLOR,
+				'label'     => esc_html__( 'Icon Background', 'careox-core' ),
+				'types'    => [ 'classic', 'gradient' ],
+				'selectors' => [
+					'{{WRAPPER}} .about-one__content__box:hover .about-one__content__box__icon'=> 'background-color: {{VALUE}}',
+				],
+			]
+		);
+
+		$this->add_control(
+			'careox_about_us_section_content_box_title_head',
+			[
+				'label' => esc_html__( 'Title', 'careox-core' ),
+				'type' => \Elementor\Controls_Manager::HEADING,
+				'separator'	=> 'before'
+			]
+		);
+
+		$this->add_control(
+			'careox_about_us_section_content_box_title_hover_color',
+			[
+				'type'      => \Elementor\Controls_Manager::COLOR,
+				'label'     => esc_html__( 'Title Color', 'careox-core' ),
+				'selectors' => [
+					'{{WRAPPER}} .about-one__content__box:hover .about-one__content__box__title'=> 'color: {{VALUE}}',
+				],
+			]
+		);
+
+		$this->add_group_control(
+			\Elementor\Group_Control_Typography::get_type(),
+			[
+				'name' => 'careox_about_us_section_content_box_title_hover_typo',
+				'label' => esc_html__('Typography', 'careox-core'),
+				'selector' => '{{WRAPPER}} .about-one__content__box:hover .about-one__content__box__title',
+			]
+		);
+
+		$this->add_group_control(
+			\Elementor\Group_Control_Text_Shadow::get_type(),
+			[
+				'name' => 'careox_about_us_section_content_box_title_hover_shadow',
+				'label' => esc_html__('Title Shadow', 'careox-core'),
+				'selector' => '{{WRAPPER}} .about-one__content__box:hover .about-one__content__box__title',
+			]
+		);
+
+		$this->add_control(
+			'careox_about_us_section_content_box_desc_hover_head',
+			[
+				'label' => esc_html__( 'Description', 'careox-core' ),
+				'type' => \Elementor\Controls_Manager::HEADING,
+			]
+		);
+
+		$this->add_control(
+			'careox_about_us_section_content_box_desc_icon_hover_color',
+			[
+				'type'      => \Elementor\Controls_Manager::COLOR,
+				'label'     => esc_html__( 'Icon Color', 'careox-core' ),
+				'selectors' => [
+					'{{WRAPPER}} .about-one__content__box:hover .about-one__content__box__text .about-one__content__box__text__icon'=> 'color: {{VALUE}}',
+				],
+			]
+		);
+
+		$this->add_control(
+			'careox_about_us_section_content_box_desc_hover_color',
+			[
+				'type'      => \Elementor\Controls_Manager::COLOR,
+				'label'     => esc_html__( 'Descrition Color', 'careox-core' ),
+				'selectors' => [
+					'{{WRAPPER}} .about-one__content__box:hover .about-one__content__box__text'=> 'color: {{VALUE}}',
+				],
+			]
+		);
+
+		$this->add_group_control(
+			\Elementor\Group_Control_Typography::get_type(),
+			[
+				'name' => 'careox_about_us_section_content_box_desc_hover_typo',
+				'label' => esc_html__('Typography', 'careox-core'),
+				'selector' => '{{WRAPPER}} .about-one__content__box:hover .about-one__content__box__text',
+			]
+		);
+
+		$this->add_group_control(
+			\Elementor\Group_Control_Text_Shadow::get_type(),
+			[
+				'name' => 'careox_about_us_section_content_box_desc_hover_shadow',
+				'label' => esc_html__('Title Shadow', 'careox-core'),
+				'selector' => '{{WRAPPER}} .about-one__content__box:hover .about-one__content__box__text',
+			]
+		);
+
+		$this->end_controls_tab();
+
+		$this->end_controls_tabs();
+	
+		$this->end_controls_section();
+
 
 	}
 
