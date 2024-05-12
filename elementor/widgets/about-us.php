@@ -176,9 +176,61 @@ class Careox_About_Us extends \Elementor\Widget_Base {
                     ]
 				],
 				'title_field' => '{{{ cx_about_us_content_box_title }}}',
-			
+				'prevent_empty' => false,
                 'condition' => [
                     'cx_about_us_show_content_box' => 'yes',
+                ],
+			]
+		);
+
+		$this->add_control(
+			'careox_about_us_show_content_border',
+			[
+				'label' => esc_html__( 'Show Content Border', 'careox-core' ),
+				'type' => \Elementor\Controls_Manager::SWITCHER,
+				'description' => 'Show or Hide Button. Default: Show',
+				'label_on' => esc_html__( 'Show', 'careox-core' ),
+				'label_off' => esc_html__( 'Hide', 'careox-core' ),
+				'return_value' => 'yes',
+				'default' => 'yes',
+				'separator' => 'before'
+			]
+		);
+
+		$this->add_control(
+			'careox_about_us_show_content_height',
+			[
+				'label' => esc_html__( 'Border Height', 'careox-core' ),
+				'type' => \Elementor\Controls_Manager::SLIDER,
+				'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
+				'default' => [
+					'unit' => 'px',
+					'size' => 1,
+				],
+				'selectors' => [
+					'{{WRAPPER}} .about-one__content__border ' => 'height: {{SIZE}}{{UNIT}};',
+				],
+				'condition' => [
+                    'careox_about_us_show_content_border' => 'yes',
+                ],
+			]
+		);
+
+		$this->add_control(
+			'careox_about_us_show_content_width',
+			[
+				'label' => esc_html__( 'Border Circle', 'careox-core' ),
+				'type' => \Elementor\Controls_Manager::SLIDER,
+				'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
+				'default' => [
+					'unit' => 'px',
+					'size' => 7,
+				],
+				'selectors' => [
+					'{{WRAPPER}} .about-one__content__border::after' => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};',
+				],
+				'condition' => [
+                    'careox_about_us_show_content_border' => 'yes',
                 ],
 			]
 		);
@@ -290,7 +342,6 @@ class Careox_About_Us extends \Elementor\Widget_Base {
 
 		$this->end_controls_section();
 
-
         $this->start_controls_section(
 			'cx_about_us_section_image',
 			[
@@ -323,8 +374,6 @@ class Careox_About_Us extends \Elementor\Widget_Base {
 		);
 
 		$this->end_controls_section();
-
-
 
         $this->start_controls_section(
 			'cx_about_us_section_media',
@@ -370,9 +419,7 @@ class Careox_About_Us extends \Elementor\Widget_Base {
 			]
 		);
 
-
 		$this->end_controls_section();
-
 
         $this->start_controls_section(
 			'cx_about_us_section_shape_image',
@@ -483,7 +530,6 @@ class Careox_About_Us extends \Elementor\Widget_Base {
 
 		$this->end_controls_section();
 
-
 		$this->start_controls_section(
 			'cx_about_us_section_donations_us',
 			[
@@ -529,9 +575,6 @@ class Careox_About_Us extends \Elementor\Widget_Base {
 		);
 		
 		$this->end_controls_section();
-
-
-
 
 		$this->start_controls_section(
 			'careox_about_us_section_title_heading',
@@ -591,7 +634,6 @@ class Careox_About_Us extends \Elementor\Widget_Base {
 		);
 
 		$this->end_controls_section();
-		
 
 		$this->start_controls_section(
 			'careox_about_us_section_sub_title_heading',
@@ -626,7 +668,7 @@ class Careox_About_Us extends \Elementor\Widget_Base {
 			\Elementor\Group_Control_Text_Shadow::get_type(),
 			[
 				'name' => 'careox_about_us_section_sub_title_shadow',
-				'label' => esc_html__('Title Shadow', 'careox-core'),
+				'label' => esc_html__('Shadow', 'careox-core'),
 				'selector' => '{{WRAPPER}} .sec-title__tagline',
 			]
 		);
@@ -645,8 +687,6 @@ class Careox_About_Us extends \Elementor\Widget_Base {
 
 		$this->end_controls_section();
 
-
-		
 		$this->start_controls_section(
 			'careox_about_us_section_desc_heading',
 			[
@@ -679,7 +719,7 @@ class Careox_About_Us extends \Elementor\Widget_Base {
 			\Elementor\Group_Control_Text_Shadow::get_type(),
 			[
 				'name' => 'careox_about_us_section_desc_shadow',
-				'label' => esc_html__('Title Shadow', 'careox-core'),
+				'label' => esc_html__('Shadow', 'careox-core'),
 				'selector' => '{{WRAPPER}} .about-one__content__text',
 			]
 		);
@@ -698,8 +738,6 @@ class Careox_About_Us extends \Elementor\Widget_Base {
 
 		$this->end_controls_section();
 		
-
-
 		$this->start_controls_section(
 			'careox_about_us_section_content_box_heading',
 			[
@@ -833,12 +871,11 @@ class Careox_About_Us extends \Elementor\Widget_Base {
 			\Elementor\Group_Control_Text_Shadow::get_type(),
 			[
 				'name' => 'careox_about_us_section_content_box_desc_normal_shadow',
-				'label' => esc_html__('Title Shadow', 'careox-core'),
+				'label' => esc_html__('Description Shadow', 'careox-core'),
 				'selector' => '{{WRAPPER}} .about-one__content__box__text',
 			]
 		);
 
-		
 		$this->end_controls_tab();
 
 		$this->start_controls_tab(
@@ -961,7 +998,7 @@ class Careox_About_Us extends \Elementor\Widget_Base {
 			\Elementor\Group_Control_Text_Shadow::get_type(),
 			[
 				'name' => 'careox_about_us_section_content_box_desc_hover_shadow',
-				'label' => esc_html__('Title Shadow', 'careox-core'),
+				'label' => esc_html__('Description Shadow', 'careox-core'),
 				'selector' => '{{WRAPPER}} .about-one__content__box:hover .about-one__content__box__text',
 			]
 		);
@@ -971,7 +1008,51 @@ class Careox_About_Us extends \Elementor\Widget_Base {
 		$this->end_controls_tabs();
 	
 		$this->end_controls_section();
-		
+
+		$this->start_controls_section(
+			'careox_about_us_content_border',
+			[
+				'label' => esc_html__( 'Content Border', 'careox-core' ),
+				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+			]
+		);
+
+		$this->add_control(
+			'careox_about_us_content_border_color',
+			[
+				'type'      => \Elementor\Controls_Manager::COLOR,
+				'label'     => esc_html__( 'Border Color', 'careox-core' ),
+				'selectors' => [
+					'{{WRAPPER}} .about-one__content__border'=> 'background-color: {{VALUE}}',
+				],
+			]
+		);
+
+		$this->add_control(
+			'careox_about_us_content_border_circal',
+			[
+				'type'      => \Elementor\Controls_Manager::COLOR,
+				'label'     => esc_html__( 'Circal Color', 'careox-core' ),
+				'selectors' => [
+					'{{WRAPPER}} .about-one__content__border::after'=> 'background-color: {{VALUE}}',
+				],
+			]
+		);
+
+		$this->add_responsive_control(
+			'careox_about_us_content_border_radius',
+			[
+				'label' => esc_html__('Border Radius', 'careox-core'),
+				'type' => \Elementor\Controls_Manager::DIMENSIONS,
+				'size_units' => ['px', '%', 'em', 'rem', 'custom'],
+				'selectors' => [
+					'{{WRAPPER}} .about-one__content__border' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+				'separator' => 'before'
+			]
+		);
+
+		$this->end_controls_section();
 
 		$this->start_controls_section(
 			'careox_about_us_section_content_list_heading',
@@ -1022,14 +1103,6 @@ class Careox_About_Us extends \Elementor\Widget_Base {
 		);
 
 		$this->end_controls_section();
-
-
-
-
-
-
-
-
 
 		$this->start_controls_section(
 			'careox_about_us_section_btn',
@@ -1227,20 +1300,12 @@ class Careox_About_Us extends \Elementor\Widget_Base {
 			]
 		);
 
-
 		$this->end_controls_tab();
 
 		$this->end_controls_tabs();
 
 		$this->end_controls_section();
 
-
-
-
-
-
-
-		
 		$this->start_controls_section(
 			'careox_about_us_image_style',
 			[
@@ -1312,8 +1377,6 @@ class Careox_About_Us extends \Elementor\Widget_Base {
 			]
 		);
 
-
-
 		$this->add_control(
 			'careox_about_us_image_two_head',
 			[
@@ -1379,11 +1442,6 @@ class Careox_About_Us extends \Elementor\Widget_Base {
 		);
 
 		$this->end_controls_section();
-
-
-
-
-
 
 		$this->start_controls_section(
 			'careox_about_us_media_style',
@@ -1496,7 +1554,6 @@ class Careox_About_Us extends \Elementor\Widget_Base {
 			]
 		);
 
-
 		$this->end_controls_tab();
 
 		$this->start_controls_tab(
@@ -1517,7 +1574,6 @@ class Careox_About_Us extends \Elementor\Widget_Base {
 			]
 		);
 
-
 		$this->add_control(
 			'careox_about_us_media_icon_hover_bg_color',
 			[
@@ -1535,19 +1591,11 @@ class Careox_About_Us extends \Elementor\Widget_Base {
 			]
 		);
 
-
-
 		$this->end_controls_tab();
 
 		$this->end_controls_tabs();
-		
-
 
 		$this->end_controls_section();
-
-
-
-
 
 		$this->start_controls_section(
 			'careox_about_us_donation',
@@ -1811,13 +1859,11 @@ class Careox_About_Us extends \Elementor\Widget_Base {
 			]
 		);
 
-
 		$this->end_controls_tab();
 
 		$this->end_controls_tabs();
 
 		$this->end_controls_section();
-
 
 	}
 
@@ -1992,7 +2038,9 @@ class Careox_About_Us extends \Elementor\Widget_Base {
 									<?php endforeach; ?>
 								</div>
 							<?php endif; ?>
-                            <div class="about-one__content__border"></div>
+							<?php if("yes" === $settings['careox_about_us_show_content_border']): ?>
+                            	<div class="about-one__content__border"></div>
+							<?php endif; ?>
 
 							<?php if($settings['cx_about_us_content_list']): ?>
 								<ul class="about-one__content__list">
@@ -2013,7 +2061,6 @@ class Careox_About_Us extends \Elementor\Widget_Base {
 									<?php endforeach; ?>
 								</ul>
 							<?php endif; ?>
-
                             <a href="<?php echo esc_url($settings['cx_about_us_btn_url']['url']); ?>" class="careox-btn"><span <?php echo $this->get_render_attribute_string( 'cx_about_us_btn_text' ); ?>><?php echo esc_html($settings['cx_about_us_btn_text']); ?></span></a>
                         </div>
                     </div>
