@@ -845,7 +845,7 @@ class Careox_About_Us extends \Elementor\Widget_Base {
 		$this->end_controls_tab();
 
 		$this->start_controls_tab(
-			'xpovio_button_hover_tab',
+			'careox_about_us_section_content_box_hover_tab',
 			[
 				'label' => __( 'Hover', 'careox-core' ),
 			]
@@ -973,6 +973,268 @@ class Careox_About_Us extends \Elementor\Widget_Base {
 
 		$this->end_controls_tabs();
 	
+		$this->end_controls_section();
+		
+
+		$this->start_controls_section(
+			'careox_about_us_section_content_list_heading',
+			[
+				'label' => esc_html__( 'Content List', 'careox-core' ),
+				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+			]
+		);
+	
+		$this->add_control(
+			'careox_about_us_section_content_list_icon_color',
+			[
+				'type'      => \Elementor\Controls_Manager::COLOR,
+				'label'     => esc_html__( 'Icon Color', 'careox-core' ),
+				'selectors' => [
+					'{{WRAPPER}} .about-one__content__list__icon'=> 'color: {{VALUE}}',
+				],
+			]
+		);
+
+		$this->add_control(
+			'careox_about_us_section_content_list_title_color',
+			[
+				'type'      => \Elementor\Controls_Manager::COLOR,
+				'label'     => esc_html__( 'Descrition Color', 'careox-core' ),
+				'selectors' => [
+					'{{WRAPPER}} .about-one__content__list li'=> 'color: {{VALUE}}',
+				],
+			]
+		);
+
+		$this->add_group_control(
+			\Elementor\Group_Control_Typography::get_type(),
+			[
+				'name' => 'careox_about_us_section_content_list_title_typo',
+				'label' => esc_html__('Typography', 'careox-core'),
+				'selector' => '{{WRAPPER}} .about-one__content__list li',
+			]
+		);
+
+		$this->add_group_control(
+			\Elementor\Group_Control_Text_Shadow::get_type(),
+			[
+				'name' => 'careox_about_us_section_content_list_title_shadow',
+				'label' => esc_html__('Description Shadow', 'careox-core'),
+				'selector' => '{{WRAPPER}} .about-one__content__list li',
+			]
+		);
+
+		$this->end_controls_section();
+
+
+
+
+
+
+
+
+
+		$this->start_controls_section(
+			'careox_about_us_section_btn',
+			[
+				'label' => esc_html__( 'Button', 'careox-core' ),
+				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+			]
+		);
+
+		$this->start_controls_tabs(
+			'careox_about_us_section_btn_tabs'
+		);
+
+		$this->start_controls_tab(
+			'careox_about_us_section_btn_tab',
+			[
+				'label' => __( 'Normal', 'careox-core' ),
+			]
+		);
+		
+		$this->add_control(
+			'careox_about_us_section_btn_normal_color',
+			[
+				'type'      => \Elementor\Controls_Manager::COLOR,
+				'label'     => esc_html__( 'Color', 'careox-core' ),
+				'selectors' => [
+					'{{WRAPPER}} .about-one__content .careox-btn'=> 'color: {{VALUE}}',
+				],
+			]
+		);
+
+		$this->add_group_control(
+			\Elementor\Group_Control_Typography::get_type(),
+			[
+				'name' => 'careox_about_us_section_btn_normal_typo',
+				'label' => esc_html__('Typography', 'careox-core'),
+				'selector' => '{{WRAPPER}}  .about-one__content .careox-btn',
+			]
+		);
+
+		$this->add_control(
+			'careox_about_us_section_btn_normal_bg_color',
+			[
+				'type'      => \Elementor\Controls_Manager::COLOR,
+				'label'     => esc_html__( 'Background', 'careox-core' ),
+				'types'    => [ 'classic', 'gradient' ],
+				'selectors' => [
+					'{{WRAPPER}} .about-one__content .careox-btn::before'=> 'background-color: {{VALUE}}',
+				],
+				'fields_options'  => [
+					'background' => [
+						'label' => esc_html__( 'Background', 'careox-core' ),
+					],
+				],
+			]
+		);
+
+		$this->add_group_control(
+			\Elementor\Group_Control_Border::get_type(),
+			[
+				'name' => 'careox_about_us_section_btn_normal_border',
+				'selector' => '{{WRAPPER}} .about-one__content .careox-btn::before',
+			]
+		);
+
+		$this->add_responsive_control(
+			'careox_about_us_section_btn_normal_margin',
+			[
+				'label' => esc_html__('Margin', 'careox-core'),
+				'type' => \Elementor\Controls_Manager::DIMENSIONS,
+				'size_units' => ['px', '%', 'em', 'rem', 'custom'],
+				'selectors' => [
+					'{{WRAPPER}}  .about-one__content .careox-btn' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+				'separator' => 'before'
+			]
+		);
+
+		$this->add_responsive_control(
+			'careox_about_us_section_btn_normal_padding',
+			[
+				'label' => esc_html__('Padding', 'careox-core'),
+				'type' => \Elementor\Controls_Manager::DIMENSIONS,
+				'size_units' => ['px', '%', 'em', 'rem', 'custom'],
+				'selectors' => [
+					'{{WRAPPER}} .about-one__content .careox-btn' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+				'separator' => 'before'
+			]
+		);
+
+		$this->add_responsive_control(
+			'careox_about_us_section_btn_normal_radius',
+			[
+				'label' => esc_html__('Border Radius', 'careox-core'),
+				'type' => \Elementor\Controls_Manager::DIMENSIONS,
+				'size_units' => ['px', '%', 'em', 'rem', 'custom'],
+				'selectors' => [
+					'{{WRAPPER}} .about-one__content .careox-btn::before' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+				'separator' => 'before'
+			]
+		);
+
+		$this->end_controls_tab();
+
+		$this->start_controls_tab(
+			'careox_about_us_section_btn_hover_tab',
+			[
+				'label' => __( 'Hover', 'careox-core' ),
+			]
+		);
+
+		$this->add_control(
+			'careox_about_us_section_btn_hover_color',
+			[
+				'type'      => \Elementor\Controls_Manager::COLOR,
+				'label'     => esc_html__( 'Color', 'careox-core' ),
+				'selectors' => [
+					'{{WRAPPER}} .about-one__content .careox-btn::hover'=> 'color: {{VALUE}}',
+				],
+			]
+		);
+
+		$this->add_group_control(
+			\Elementor\Group_Control_Typography::get_type(),
+			[
+				'name' => 'careox_about_us_section_btn_typo_hover',
+				'label' => esc_html__('Typography', 'careox-core'),
+				'selector' => '{{WRAPPER}}  .about-one__content .careox-btn:hover',
+			]
+		);
+
+		$this->add_control(
+			'careox_about_us_section_btn_hover_bg_color',
+			[
+				'type'      => \Elementor\Controls_Manager::COLOR,
+				'label'     => esc_html__( 'Background', 'careox-core' ),
+				'types'    => [ 'classic', 'gradient' ],
+				'selectors' => [
+					'{{WRAPPER}} .about-one__content .careox-btn::after'=> 'background-color: {{VALUE}}',
+				],
+				'fields_options'  => [
+					'background' => [
+						'label' => esc_html__( 'Background', 'careox-core' ),
+					],
+				],
+			]
+		);
+
+		$this->add_group_control(
+			\Elementor\Group_Control_Border::get_type(),
+			[
+				'name' => 'careox_about_us_section_btn_hover_border',
+				'selector' => '{{WRAPPER}} .about-one__content .careox-btn::after',
+			]
+		);
+
+		$this->add_responsive_control(
+			'careox_about_us_section_btn_hover_margin',
+			[
+				'label' => esc_html__('Margin', 'careox-core'),
+				'type' => \Elementor\Controls_Manager::DIMENSIONS,
+				'size_units' => ['px', '%', 'em', 'rem', 'custom'],
+				'selectors' => [
+					'{{WRAPPER}}  .about-one__content .careox-btn:hover' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+				'separator' => 'before'
+			]
+		);
+
+		$this->add_responsive_control(
+			'careox_about_us_section_btn_hover_padding',
+			[
+				'label' => esc_html__('Padding', 'careox-core'),
+				'type' => \Elementor\Controls_Manager::DIMENSIONS,
+				'size_units' => ['px', '%', 'em', 'rem', 'custom'],
+				'selectors' => [
+					'{{WRAPPER}} .about-one__content .careox-btn:hover' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+				'separator' => 'before'
+			]
+		);
+
+		$this->add_responsive_control(
+			'careox_about_us_section_btn_hover_radius',
+			[
+				'label' => esc_html__('Border Radius', 'careox-core'),
+				'type' => \Elementor\Controls_Manager::DIMENSIONS,
+				'size_units' => ['px', '%', 'em', 'rem', 'custom'],
+				'selectors' => [
+					'{{WRAPPER}} .about-one__content .careox-btn::before:hover' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+				'separator' => 'before'
+			]
+		);
+
+
+		$this->end_controls_tab();
+
+		$this->end_controls_tabs();
+
 		$this->end_controls_section();
 
 
@@ -1174,7 +1436,7 @@ class Careox_About_Us extends \Elementor\Widget_Base {
                     </div>
                 </div>
                 <div <?php echo $this->get_render_attribute_string( 'cx_about_us_section_donations_us_content' ); ?>>
-                    <span>#</span> <?php echo wp_kses_post($settings['cx_about_us_section_donations_us_content']); ?> 
+                    <?php echo wp_kses_post($settings['cx_about_us_section_donations_us_content']); ?> 
 					<?php if($settings['cx_about_us_section_donations_us_btn_url']['url'] || $settings['cx_about_us_section_donations_us_btn_text']): ?>
 						<a href="<?php echo esc_html($settings['cx_about_us_section_donations_us_btn_url']['url']); ?>" class="careox-btn">
 							<span <?php echo $this->get_render_attribute_string( 'cx_about_us_section_donations_us_btn_text' ); ?>><?php echo esc_html($settings['cx_about_us_section_donations_us_btn_text']); ?></span>
