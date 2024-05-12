@@ -403,7 +403,7 @@ class Careox_About_Us extends \Elementor\Widget_Base {
 				'label' => esc_html__( 'Choose Image One', 'careox-core' ),
 				'type' => \Elementor\Controls_Manager::MEDIA,
 				'default' => [
-					'url' => XPOVIO_CORE_BASE_URL . "assets/images/shapes/about-1-shape-1.png",
+					'url' => CAREOX_CORE_BASE_URL . "assets/images/shapes/about-1-shape-1.png",
 				],
 			]
 		);
@@ -428,7 +428,7 @@ class Careox_About_Us extends \Elementor\Widget_Base {
 				'label' => esc_html__( 'Choose Image Two', 'careox-core' ),
 				'type' => \Elementor\Controls_Manager::MEDIA,
 				'default' => [
-					'url' => XPOVIO_CORE_BASE_URL . "assets/images/shapes/about-1-shape-2.png",
+					'url' => CAREOX_CORE_BASE_URL . "assets/images/shapes/about-1-shape-2.png",
 				],
 			]
 		);
@@ -453,7 +453,7 @@ class Careox_About_Us extends \Elementor\Widget_Base {
 				'label' => esc_html__( 'Choose Image Three', 'careox-core' ),
 				'type' => \Elementor\Controls_Manager::MEDIA,
 				'default' => [
-					'url' => XPOVIO_CORE_BASE_URL . "assets/images/shapes/about-1-shape-3.png",
+					'url' => CAREOX_CORE_BASE_URL . "assets/images/shapes/about-1-shape-3.png",
 				],
 			]
 		);
@@ -478,7 +478,7 @@ class Careox_About_Us extends \Elementor\Widget_Base {
 				'label' => esc_html__( 'Choose Image Four', 'careox-core' ),
 				'type' => \Elementor\Controls_Manager::MEDIA,
 				'default' => [
-					'url' => XPOVIO_CORE_BASE_URL . "assets/images/shapes/about-1-shape-4.png",
+					'url' => CAREOX_CORE_BASE_URL . "assets/images/shapes/about-1-shape-4.png",
 				],
 			]
 		);
@@ -490,7 +490,7 @@ class Careox_About_Us extends \Elementor\Widget_Base {
 		$this->start_controls_section(
 			'cx_about_us_section_donations_us',
 			[
-				'label' => esc_html__( 'Donations Us', 'careox-core' ),
+				'label' => esc_html__( 'Donation Us', 'careox-core' ),
 				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -498,7 +498,7 @@ class Careox_About_Us extends \Elementor\Widget_Base {
 		$this->add_control(
 			'cx_about_us_section_donations_us_content',
 			[
-				'label' => esc_html__( 'Media Text', 'careox-core' ),
+				'label' => esc_html__( 'Text', 'careox-core' ),
 				'type' => \Elementor\Controls_Manager::TEXTAREA,
 				'default' => __( '<span>#</span> We Give Donations Poor People Impact on Someone’s Life.' , 'careox-core' ),
 				'label_block' => true,
@@ -1236,6 +1236,18 @@ class Careox_About_Us extends \Elementor\Widget_Base {
 		$this->end_controls_tabs();
 
 		$this->end_controls_section();
+
+
+
+		// $this->start_controls_section(
+		// 	'careox_about_us_section_btn',
+		// 	[
+		// 		'label' => esc_html__( 'Button', 'careox-core' ),
+		// 		'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+		// 	]
+		// );
+
+		// $this->end_controls_section();
 
 
 	}
