@@ -1,14 +1,13 @@
 <?php
 /**
- * Plugin Name: careox core
- * Description: Lorem ipsum dolor sit amet consectetur adipisicing elit.
- * Plugin URI:  https://promasudbd.com/
+ * Plugin Name: Careox Core
+ * Description: Helper Plugin for Careox Theme
+ * Plugin URI:	https://bracket-web/item/careox-theme
  * Version:     1.0.0
- * Author:      MRana
- * Author URI:  https://promasudbd.com/
+ * Author:    	Bracket Web
+ * Author URI:  https://bracket-web/
  * Requires at least: 5.4
  * Requires PHP: 7.0
- * Requires Plugins: Required plugins
  * Text Domain: careox-core
  * 
  */
@@ -46,11 +45,11 @@ if(!class_exists("Careox_Core")){
 		public function careox_core_enqueue_files(){
 		
 			wp_enqueue_style("google-fonts", "//fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
-			wp_enqueue_style("font-awesome-css", CAREOX_CORE_BASE_URL . "assets/vendors/fontawesome/css/all.min.css");
-			wp_enqueue_style("bootstrap-css", CAREOX_CORE_BASE_URL . "assets/vendors/bootstrap/css/bootstrap.min.css");
-			wp_enqueue_style("coreox-icon", CAREOX_CORE_BASE_URL . "assets/vendors/careox-icons/style.css");
-			wp_enqueue_style("coreox-icofont", CAREOX_CORE_BASE_URL . "assets/vendors/icofont/icofont.min.css");
-			wp_enqueue_style("coreox-main-css", CAREOX_CORE_BASE_URL . "assets/css/careox.css");
+			wp_enqueue_style("font-awesome-css", CAREOX_CORE_BASE_URL . "assets/vendors/fontawesome/css/all.min.css", array(), '1.0.0', 'all');
+			wp_enqueue_style("bootstrap-css", CAREOX_CORE_BASE_URL . "assets/vendors/bootstrap/css/bootstrap.min.css", array(), '1.0.0', 'all');
+			wp_enqueue_style("coreox-icon", CAREOX_CORE_BASE_URL . "assets/vendors/careox-icons/style.css", array(), '1.0.0', 'all');
+			wp_enqueue_style("coreox-icofont", CAREOX_CORE_BASE_URL . "assets/vendors/icofont/icofont.min.css", array(), '1.0.0', 'all');
+			wp_enqueue_style("coreox-main-css", CAREOX_CORE_BASE_URL . "assets/css/careox.css", array(), '1.0.0', 'all');
 
 			wp_enqueue_script("bootstrap-js", CAREOX_CORE_BASE_URL . "assets/vendors/bootstrap/js/bootstrap.bundle.min.js", array('jquery'), '1.0.0', true);
 			wp_enqueue_script("bootstrap-js", CAREOX_CORE_BASE_URL . "assets/vendors/bootstrap/js/bootstrap.bundle.min.js", array('jquery'), '1.0.0', true);

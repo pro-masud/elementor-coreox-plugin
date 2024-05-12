@@ -486,11 +486,10 @@ class Careox_About_Us extends \Elementor\Widget_Base {
 		$this->end_controls_section();
 
 
-
 		$this->start_controls_section(
 			'cx_about_us_section_donations_us',
 			[
-				'label' => esc_html__( 'Donation Us', 'careox-core' ),
+				'label' => esc_html__( 'About Donation', 'careox-core' ),
 				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -1239,15 +1238,276 @@ class Careox_About_Us extends \Elementor\Widget_Base {
 
 
 
-		// $this->start_controls_section(
-		// 	'careox_about_us_section_btn',
-		// 	[
-		// 		'label' => esc_html__( 'Button', 'careox-core' ),
-		// 		'tab' => \Elementor\Controls_Manager::TAB_STYLE,
-		// 	]
-		// );
 
-		// $this->end_controls_section();
+		$this->start_controls_section(
+			'careox_about_us_donation',
+			[
+				'label' => esc_html__( 'About Donation', 'careox-core' ),
+				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+			]
+		);
+
+		$this->add_control(
+			'careox_about_us_donation_hash_head',
+			[
+				'label' => esc_html__( 'Hash Text', 'careox-core' ),
+				'type' => \Elementor\Controls_Manager::HEADING,
+			]
+		);
+
+		$this->add_control(
+			'careox_about_us_donation_hash_color',
+			[
+				'type' => \Elementor\Controls_Manager::COLOR,
+				'label' => esc_html__('Text Color', 'careox-core'),
+				'selectors' => [
+					'{{WRAPPER}} .about-one__text > span' => 'color: {{VALUE}}',
+				],
+			]
+		);
+
+		$this->add_control(
+			'careox_about_us_donation_text_head',
+			[
+				'label' => esc_html__( 'Donation Text', 'careox-core' ),
+				'type' => \Elementor\Controls_Manager::HEADING,
+				'separator'	=> 'before'
+			]
+		);
+
+		$this->add_control(
+			'careox_about_us_donation_text_color',
+			[
+				'type' => \Elementor\Controls_Manager::COLOR,
+				'label' => esc_html__('Text Color', 'careox-core'),
+				'selectors' => [
+					'{{WRAPPER}} .about-one__text' => 'color: {{VALUE}}',
+				],
+			]
+		);
+
+		$this->add_group_control(
+			\Elementor\Group_Control_Typography::get_type(),
+			[
+				'name' => 'careox_about_us_donation_text_typo',
+				'label' => esc_html__('Typography', 'careox-core'),
+				'selector' => '{{WRAPPER}} .about-one__text',
+			]
+		);
+
+		$this->add_group_control(
+			\Elementor\Group_Control_Text_Shadow::get_type(),
+			[
+				'name' => 'careox_about_us_donation_text_shadow',
+				'label' => esc_html__('Text Shadow', 'careox-core'),
+				'selector' => '{{WRAPPER}} .about-one__text',
+			]
+		);
+		
+		$this->add_control(
+			'careox_about_us_donation_btn_head',
+			[
+				'label' => esc_html__( 'Button', 'careox-core' ),
+				'type' => \Elementor\Controls_Manager::HEADING,
+				'separator'	=> 'before'
+			]
+		);
+
+
+		$this->start_controls_tabs(
+			'careox_about_us_donation_btn_tabs'
+		);
+
+		$this->start_controls_tab(
+			'careox_about_us_donation_btn_tab',
+			[
+				'label' => __( 'Normal', 'careox-core' ),
+			]
+		);
+		
+		$this->add_control(
+			'careox_about_us_donation_btn_normal_color',
+			[
+				'type'      => \Elementor\Controls_Manager::COLOR,
+				'label'     => esc_html__( 'Color', 'careox-core' ),
+				'selectors' => [
+					'{{WRAPPER}} .about-one__text .careox-btn'=> 'color: {{VALUE}}',
+				],
+			]
+		);
+
+		$this->add_group_control(
+			\Elementor\Group_Control_Typography::get_type(),
+			[
+				'name' => 'careox_about_us_donation_btn_normal_typo',
+				'label' => esc_html__('Typography', 'careox-core'),
+				'selector' => '{{WRAPPER}}  .about-one__text .careox-btn',
+			]
+		);
+
+		$this->add_control(
+			'careox_about_us_donation_btn_normal_bg_color',
+			[
+				'type'      => \Elementor\Controls_Manager::COLOR,
+				'label'     => esc_html__( 'Background', 'careox-core' ),
+				'types'    => [ 'classic', 'gradient' ],
+				'selectors' => [
+					'{{WRAPPER}} .about-one__text .careox-btn::before'=> 'background-color: {{VALUE}}',
+				],
+				'fields_options'  => [
+					'background' => [
+						'label' => esc_html__( 'Background', 'careox-core' ),
+					],
+				],
+			]
+		);
+
+		$this->add_group_control(
+			\Elementor\Group_Control_Border::get_type(),
+			[
+				'name' => 'careox_about_us_donation_btn_normal_border',
+				'selector' => '{{WRAPPER}} .about-one__text .careox-btn::before',
+			]
+		);
+
+		$this->add_responsive_control(
+			'careox_about_us_donation_btn_normal_margin',
+			[
+				'label' => esc_html__('Margin', 'careox-core'),
+				'type' => \Elementor\Controls_Manager::DIMENSIONS,
+				'size_units' => ['px', '%', 'em', 'rem', 'custom'],
+				'selectors' => [
+					'{{WRAPPER}}  .about-one__text .careox-btn' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+				'separator' => 'before'
+			]
+		);
+
+		$this->add_responsive_control(
+			'careox_about_us_donation_btn_normal_padding',
+			[
+				'label' => esc_html__('Padding', 'careox-core'),
+				'type' => \Elementor\Controls_Manager::DIMENSIONS,
+				'size_units' => ['px', '%', 'em', 'rem', 'custom'],
+				'selectors' => [
+					'{{WRAPPER}} .about-one__text .careox-btn' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+				'separator' => 'before'
+			]
+		);
+
+		$this->add_responsive_control(
+			'careox_about_us_donation_btn_normal_radius',
+			[
+				'label' => esc_html__('Border Radius', 'careox-core'),
+				'type' => \Elementor\Controls_Manager::DIMENSIONS,
+				'size_units' => ['px', '%', 'em', 'rem', 'custom'],
+				'selectors' => [
+					'{{WRAPPER}} .about-one__text .careox-btn::before' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+				'separator' => 'before'
+			]
+		);
+
+		$this->end_controls_tab();
+
+		$this->start_controls_tab(
+			'careox_about_us_donation_btn_hover_tab',
+			[
+				'label' => __( 'Hover', 'careox-core' ),
+			]
+		);
+
+		$this->add_control(
+			'careox_about_us_donation_btn_hover_color',
+			[
+				'type'      => \Elementor\Controls_Manager::COLOR,
+				'label'     => esc_html__( 'Color', 'careox-core' ),
+				'selectors' => [
+					'{{WRAPPER}} .about-one__text .careox-btn::hover'=> 'color: {{VALUE}}',
+				],
+			]
+		);
+
+		$this->add_group_control(
+			\Elementor\Group_Control_Typography::get_type(),
+			[
+				'name' => 'careox_about_us_donation_btn_typo_hover',
+				'label' => esc_html__('Typography', 'careox-core'),
+				'selector' => '{{WRAPPER}}  .about-one__text .careox-btn:hover',
+			]
+		);
+
+		$this->add_control(
+			'careox_about_us_donation_btn_hover_bg_color',
+			[
+				'type'      => \Elementor\Controls_Manager::COLOR,
+				'label'     => esc_html__( 'Background', 'careox-core' ),
+				'types'    => [ 'classic', 'gradient' ],
+				'selectors' => [
+					'{{WRAPPER}} .about-one__text .careox-btn::after'=> 'background-color: {{VALUE}}',
+				],
+				'fields_options'  => [
+					'background' => [
+						'label' => esc_html__( 'Background', 'careox-core' ),
+					],
+				],
+			]
+		);
+
+		$this->add_group_control(
+			\Elementor\Group_Control_Border::get_type(),
+			[
+				'name' => 'careox_about_us_donation_btn_hover_border',
+				'selector' => '{{WRAPPER}} .about-one__text .careox-btn::after',
+			]
+		);
+
+		$this->add_responsive_control(
+			'careox_about_us_donation_btn_hover_margin',
+			[
+				'label' => esc_html__('Margin', 'careox-core'),
+				'type' => \Elementor\Controls_Manager::DIMENSIONS,
+				'size_units' => ['px', '%', 'em', 'rem', 'custom'],
+				'selectors' => [
+					'{{WRAPPER}}  .about-one__text .careox-btn:hover' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+				'separator' => 'before'
+			]
+		);
+
+		$this->add_responsive_control(
+			'careox_about_us_donation_btn_hover_padding',
+			[
+				'label' => esc_html__('Padding', 'careox-core'),
+				'type' => \Elementor\Controls_Manager::DIMENSIONS,
+				'size_units' => ['px', '%', 'em', 'rem', 'custom'],
+				'selectors' => [
+					'{{WRAPPER}} .about-one__text .careox-btn:hover' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+				'separator' => 'before'
+			]
+		);
+
+		$this->add_responsive_control(
+			'careox_about_us_donation_btn_hover_radius',
+			[
+				'label' => esc_html__('Border Radius', 'careox-core'),
+				'type' => \Elementor\Controls_Manager::DIMENSIONS,
+				'size_units' => ['px', '%', 'em', 'rem', 'custom'],
+				'selectors' => [
+					'{{WRAPPER}} .about-one__text .careox-btn::before:hover' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+				'separator' => 'before'
+			]
+		);
+
+
+		$this->end_controls_tab();
+
+		$this->end_controls_tabs();
+
+		$this->end_controls_section();
 
 
 	}
