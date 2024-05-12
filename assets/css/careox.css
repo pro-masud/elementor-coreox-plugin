@@ -783,7 +783,7 @@ h6 {
   width: 4px;
   height: 17px;
   display: inline-block;
-  background-color: var(--careox-base, #ff5528);
+  background-color: #ff5528;
   position: relative;
   top: 2px;
   margin-right: 10px;
