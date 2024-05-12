@@ -335,14 +335,12 @@ class Careox_About_Us extends \Elementor\Widget_Base {
 		);
 
         $this->add_control(
-			'cx_about_us_media_video_icon',
+			'cx_about_us_media_icon',
 			[
-				'label' => esc_html__( 'Video Icon', 'careox-core' ),
-				'type' => \Elementor\Controls_Manager::ICONS,
-				'default' => [
-					'value' => 'fas fa-circle',
-					'library' => 'fa-solid',
-				],
+				'label' => esc_html__( 'Media Icon', 'careox-core' ),
+				'type' => \Elementor\Controls_Manager::TEXT,
+				'default' => esc_html__( 'icofont-ui-play' , 'careox-core' ),
+				'label_block' => true,
 			]
 		);
 
@@ -353,7 +351,7 @@ class Careox_About_Us extends \Elementor\Widget_Base {
 				'type' => \Elementor\Controls_Manager::URL,
 				'options' => [ 'url', 'is_external', 'nofollow' ],
 				'default' => [
-					'url' => '#',
+					'url' => 'https://www.youtube.com/watch?v=h9MbznbxlLc',
 					'is_external' => true,
 					'nofollow' => true,
 					// 'custom_attributes' => '',
@@ -1387,8 +1385,165 @@ class Careox_About_Us extends \Elementor\Widget_Base {
 
 
 
+		$this->start_controls_section(
+			'careox_about_us_media_style',
+			[
+				'label' => esc_html__( 'Media', 'careox-core' ),
+				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+			]
+		);
+
+		$this->add_control(
+			'careox_about_us_media_text_heading',
+			[
+				'label' => esc_html__( 'Media Text', 'careox-core' ),
+				'type' => \Elementor\Controls_Manager::HEADING,
+				'separator' => 'before',
+			]
+		);
+
+		$this->add_control(
+			'careox_about_us_media_text_color',
+			[
+				'type' => \Elementor\Controls_Manager::COLOR,
+				'label' => esc_html__('Title Color', 'careox-core'),
+				'selectors' => [
+					'{{WRAPPER}} .about-one__image__video' => 'color: {{VALUE}}',
+				],
+			]
+		);
+
+		$this->add_group_control(
+			\Elementor\Group_Control_Typography::get_type(),
+			[
+				'name' => 'careox_about_us_media_text_typo',
+				'label' => esc_html__('Typography', 'careox-core'),
+				'selector' => '{{WRAPPER}} .about-one__image__video',
+			]
+		);
+
+		$this->add_group_control(
+			\Elementor\Group_Control_Text_Shadow::get_type(),
+			[
+				'name' => 'careox_about_us_media_text_shadow',
+				'label' => esc_html__('Title Shadow', 'careox-core'),
+				'selector' => '{{WRAPPER}} .about-one__image__video',
+			]
+		);
+
+		$this->add_control(
+			'careox_about_us_media_text_background',
+			[
+				'type'      => \Elementor\Controls_Manager::COLOR,
+				'label'     => esc_html__( 'Background', 'careox-core' ),
+				'types'    => [ 'classic', 'gradient' ],
+				'selectors' => [
+					'{{WRAPPER}} .about-one__image__video'=> 'background-color: {{VALUE}}',
+				],
+				'fields_options'  => [
+					'background' => [
+						'label' => esc_html__( 'Background', 'careox-core' ),
+					],
+				],
+			]
+		);
+
+		$this->add_control(
+			'careox_about_us_media_icon_heading',
+			[
+				'label' => esc_html__( 'Media Icon', 'careox-core' ),
+				'type' => \Elementor\Controls_Manager::HEADING,
+				'separator' => 'before',
+			]
+		);
+
+		$this->start_controls_tabs(
+			'careox_about_us_media_icon_tabs'
+		);
+
+		$this->start_controls_tab(
+			'careox_about_us_media_icon_tab',
+			[
+				'label' => __( 'Normal', 'careox-core' ),
+			]
+		);
+		
+		$this->add_control(
+			'careox_about_us_media_icon_normal_color',
+			[
+				'type'      => \Elementor\Controls_Manager::COLOR,
+				'label'     => esc_html__( 'Color', 'careox-core' ),
+				'selectors' => [
+					'{{WRAPPER}} .about-one__image__video .video-popup i'=> 'color: {{VALUE}}',
+				],
+			]
+		);
+
+		$this->add_control(
+			'careox_about_us_media_icon_bg_color',
+			[
+				'type'      => \Elementor\Controls_Manager::COLOR,
+				'label'     => esc_html__( 'Background', 'careox-core' ),
+				'types'    => [ 'classic', 'gradient' ],
+				'selectors' => [
+					'{{WRAPPER}} .about-one__image__video .video-popup'=> 'background-color: {{VALUE}}',
+				],
+				'fields_options'  => [
+					'background' => [
+						'label' => esc_html__( 'Background', 'careox-core' ),
+					],
+				],
+			]
+		);
 
 
+		$this->end_controls_tab();
+
+		$this->start_controls_tab(
+			'careox_about_us_media_icon_hover_tab',
+			[
+				'label' => __( 'Hover', 'careox-core' ),
+			]
+		);
+
+		$this->add_control(
+			'careox_about_us_media_icon_hover_color',
+			[
+				'type'      => \Elementor\Controls_Manager::COLOR,
+				'label'     => esc_html__( 'Color', 'careox-core' ),
+				'selectors' => [
+					'{{WRAPPER}} .about-one__image__video .video-popup:hover i'=> 'color: {{VALUE}}',
+				],
+			]
+		);
+
+
+		$this->add_control(
+			'careox_about_us_media_icon_hover_bg_color',
+			[
+				'type'      => \Elementor\Controls_Manager::COLOR,
+				'label'     => esc_html__( 'Background', 'careox-core' ),
+				'types'    => [ 'classic', 'gradient' ],
+				'selectors' => [
+					'{{WRAPPER}} .about-one__image__video .video-popup:hover'=> 'background-color: {{VALUE}}',
+				],
+				'fields_options'  => [
+					'background' => [
+						'label' => esc_html__( 'Background', 'careox-core' ),
+					],
+				],
+			]
+		);
+
+
+
+		$this->end_controls_tab();
+
+		$this->end_controls_tabs();
+		
+
+
+		$this->end_controls_section();
 
 
 
@@ -1738,7 +1893,9 @@ class Careox_About_Us extends \Elementor\Widget_Base {
 										<div <?php echo $this->get_render_attribute_string( 'cx_about_us_media_text' ); ?>>
 											<?php if($settings['cx_about_us_media_video_link']['url']): ?>
 												<a href="<?php echo esc_url($settings['cx_about_us_media_video_link']['url']); ?>" class="video-popup">
-													<i class="icofont-ui-play"></i>
+													<?php if($settings['cx_about_us_media_icon']): ?>
+														<i class="<?php echo esc_attr($settings['cx_about_us_media_icon']); ?>"></i>
+													<?php endif; ?>
 												</a>
 											<?php endif; ?>
 											<?php echo esc_html($settings['cx_about_us_media_text']); ?>
