@@ -1239,6 +1239,161 @@ class Careox_About_Us extends \Elementor\Widget_Base {
 
 
 
+
+
+
+		
+		$this->start_controls_section(
+			'careox_about_us_image_style',
+			[
+				'label' => esc_html__( 'About Image', 'careox-core' ),
+				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+			]
+		);
+
+		$this->add_control(
+			'careox_about_us_image_one_head',
+			[
+				'label' => esc_html__( 'Image One', 'careox-core' ),
+				'type' => \Elementor\Controls_Manager::HEADING,
+			]
+		);
+
+		$this->add_group_control(
+			\Elementor\Group_Control_Border::get_type(),
+			[
+				'name' => 'careox_about_us_image_one_border',
+				'selector' => '{{WRAPPER}} .about-one__image__one img',
+			]
+		);
+
+		$this->add_responsive_control(
+			'careox_about_us_image_one_margin',
+			[
+				'label' => esc_html__('Margin', 'careox-core'),
+				'type' => \Elementor\Controls_Manager::DIMENSIONS,
+				'size_units' => ['px', '%', 'em', 'rem', 'custom'],
+				'selectors' => [
+					'{{WRAPPER}}  .about-one__image__one img' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+				'separator' => 'before'
+			]
+		);
+
+		$this->add_responsive_control(
+			'careox_about_us_image_one_padding',
+			[
+				'label' => esc_html__('Padding', 'careox-core'),
+				'type' => \Elementor\Controls_Manager::DIMENSIONS,
+				'size_units' => ['px', '%', 'em', 'rem', 'custom'],
+				'selectors' => [
+					'{{WRAPPER}} .about-one__image__one img' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+				'separator' => 'before'
+			]
+		);
+
+		$this->add_responsive_control(
+			'careox_about_us_image_one_border_radius',
+			[
+				'label' => esc_html__('Border Radius', 'careox-core'),
+				'type' => \Elementor\Controls_Manager::DIMENSIONS,
+				'size_units' => ['px', '%', 'em', 'rem', 'custom'],
+				'selectors' => [
+					'{{WRAPPER}} .about-one__image__one img' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+				'separator' => 'before'
+			]
+		);
+
+		$this->add_group_control(
+			\Elementor\Group_Control_Box_Shadow::get_type(),
+			[
+				'name' => 'careox_about_us_image_one_box_shadow',
+				'selector' => '{{WRAPPER}} .about-one__image__one img',
+			]
+		);
+
+
+
+		$this->add_control(
+			'careox_about_us_image_two_head',
+			[
+				'label' => esc_html__( 'Image One', 'careox-core' ),
+				'type' => \Elementor\Controls_Manager::HEADING,
+				'separator'	=> 'before'
+			]
+		);
+
+		$this->add_group_control(
+			\Elementor\Group_Control_Border::get_type(),
+			[
+				'name' => 'careox_about_us_image_two_border',
+				'selector' => '{{WRAPPER}} .about-one__image__two img',
+			]
+		);
+
+		$this->add_responsive_control(
+			'careox_about_us_image_two_margin',
+			[
+				'label' => esc_html__('Margin', 'careox-core'),
+				'type' => \Elementor\Controls_Manager::DIMENSIONS,
+				'size_units' => ['px', '%', 'em', 'rem', 'custom'],
+				'selectors' => [
+					'{{WRAPPER}}  .about-one__image__two img' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+				'separator' => 'before'
+			]
+		);
+
+		$this->add_responsive_control(
+			'careox_about_us_image_two_padding',
+			[
+				'label' => esc_html__('Padding', 'careox-core'),
+				'type' => \Elementor\Controls_Manager::DIMENSIONS,
+				'size_units' => ['px', '%', 'em', 'rem', 'custom'],
+				'selectors' => [
+					'{{WRAPPER}} .about-one__image__two img' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+				'separator' => 'before'
+			]
+		);
+
+		$this->add_responsive_control(
+			'careox_about_us_image_two_border_radius',
+			[
+				'label' => esc_html__('Border Radius', 'careox-core'),
+				'type' => \Elementor\Controls_Manager::DIMENSIONS,
+				'size_units' => ['px', '%', 'em', 'rem', 'custom'],
+				'selectors' => [
+					'{{WRAPPER}} .about-one__image__two img' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+				'separator' => 'before'
+			]
+		);
+
+		$this->add_group_control(
+			\Elementor\Group_Control_Box_Shadow::get_type(),
+			[
+				'name' => 'careox_about_us_image_two_box_shadow',
+				'selector' => '{{WRAPPER}} .about-one__image__two img',
+			]
+		);
+
+		$this->end_controls_section();
+
+
+
+
+
+
+
+
+
+
+
+
+
 		$this->start_controls_section(
 			'careox_about_us_donation',
 			[
@@ -1312,7 +1467,6 @@ class Careox_About_Us extends \Elementor\Widget_Base {
 				'separator'	=> 'before'
 			]
 		);
-
 
 		$this->start_controls_tabs(
 			'careox_about_us_donation_btn_tabs'
